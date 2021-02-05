@@ -1,0 +1,15 @@
+D:\Programming\AssistantSidorovich\AssistantSidorovich\bin\Debug\AssistantSidorovich.exe.config
+D:\Programming\AssistantSidorovich\AssistantSidorovich\bin\Debug\AssistantSidorovich.exe
+D:\Programming\AssistantSidorovich\AssistantSidorovich\bin\Debug\AssistantSidorovich.pdb
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.csprojAssemblyReference.cache
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.Form1.resources
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.Properties.Resources.resources
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.csproj.GenerateResource.cache
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.csproj.CoreCompileInputs.cache
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.exe
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.pdb
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\Interop.WMPLib.dll
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AxInterop.WMPLib.dll
+D:\Programming\AssistantSidorovich\AssistantSidorovich\obj\Debug\AssistantSidorovich.csproj.ResolveComReference.cache
+D:\Programming\AssistantSidorovich\AssistantSidorovich\bin\Debug\Interop.WMPLib.dll
+D:\Programming\AssistantSidorovich\AssistantSidorovich\bin\Debug\AxInterop.WMPLib.dll
