@@ -21,6 +21,13 @@ namespace AssistantSidorovich
         int s;
         DateTime current;
 
+        // For timer
+        int Ht;
+        int Mt;
+        int St;
+
+        int time = -1;
+
         //For stopwatch
         int mm;
         int ss;
@@ -35,18 +42,22 @@ namespace AssistantSidorovich
         private void btnAlarm_Click(object sender, EventArgs e)
         {
             groupBoxStopwatch.Visible = false;
+            groupBoxTimer.Visible = false;
             groupBoxAlarm.Visible = true;
             DisplayTime();
         }
 
         private void btnTimer_Click(object sender, EventArgs e)
         {
-
+            groupBoxStopwatch.Visible = false;
+            groupBoxAlarm.Visible = false;
+            groupBoxTimer.Visible = true;
         }
 
         private void btnStopwatch_Click(object sender, EventArgs e)
         {
             groupBoxAlarm.Visible = false;
+            groupBoxTimer.Visible = false;
             groupBoxStopwatch.Visible = true;
         }
 
@@ -97,6 +108,25 @@ namespace AssistantSidorovich
                         timmer = timmer.AddMinutes(mm);
                         label3.Text = timmer.Minute.ToString();
                     }
+                }
+            }
+            else if (groupBoxTimer.Visible == true)
+            {
+                if(time ==0)
+                {
+                    notifyIcon1.Icon = SystemIcons.Exclamation;
+                    notifyIcon1.BalloonTipTitle = "Внимание";
+                    notifyIcon1.BalloonTipText = "Сработал таймер";
+                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Warning;
+
+                    notifyIcon1.Visible = true;
+                    notifyIcon1.ShowBalloonTip(5000);
+
+                    time = -1;
+                }
+                else
+                {
+                    time = time - 1;
                 }
             }
         }
@@ -159,6 +189,34 @@ namespace AssistantSidorovich
             btnReset.Enabled = false;
             btnStart.Enabled = true;
             btnStop.Enabled = false;
+        }
+
+
+        //Timer xerak xerak
+        private void btnSetTimer_Click(object sender, EventArgs e)
+        {
+            Ht = (int)HoursTimer.Value;
+            Mt = (int)MinutesTimer.Value;
+            St = (int)SecondsTimer.Value;
+            btnSetTimer.Enabled = false;
+            btnTurnOffTimer.Enabled = true;
+            timer1.Enabled = true;
+
+            time = (Ht * 3600) + (Mt * 60) + St;
+            MessageBox.Show(time.ToString());
+        }
+
+        private void btnTurnOffTimer_Click(object sender, EventArgs e)
+        {
+            btnSetTimer.Enabled = true;
+            btnTurnOffTimer.Enabled = false;
+            timer1.Enabled = false;
+            time = -1;
+
+
+            HoursTimer.Value = 0;
+            MinutesTimer.Value = 0;
+            SecondsTimer.Value = 0;
         }
     }
 }
