@@ -94,11 +94,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MusicManagerForm.cs">
+    <Compile Include="VideoDownload.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MusicManagerForm.Designer.cs">
-      <DependentUpon>MusicManagerForm.cs</DependentUpon>
+    <Compile Include="VideoDownload.Designer.cs">
+      <DependentUpon>VideoDownload.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

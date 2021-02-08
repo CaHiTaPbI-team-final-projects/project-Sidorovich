@@ -1,6 +1,6 @@
 ﻿namespace AssistantSidorovich
 {
-    partial class MusicManagerForm
+    partial class VideoDownload
     {
         /// <summary>
         /// Required designer variable.

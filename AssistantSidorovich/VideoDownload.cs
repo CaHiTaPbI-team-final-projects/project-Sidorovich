@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AssistantSidorovich
 {
-    public partial class MusicManagerForm : Form
+    public partial class VideoDownload : Form
     {
-        public MusicManagerForm()
+        public VideoDownload()
         {
             InitializeComponent();
         }

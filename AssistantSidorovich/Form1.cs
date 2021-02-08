@@ -96,5 +96,39 @@ namespace AssistantSidorovich
             TimerForm tf = new TimerForm();
             tf.Show();
         }
+
+        private void DownloadVideoButton_Click(object sender, EventArgs e)
+        {
+            VideoDownload vd = new VideoDownload();
+            vd.Show();
+        }
+
+        private void JokesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TasksManagerButton_Click(object sender, EventArgs e)
+        {
+            TaskManagerForm tmf = new TaskManagerForm();
+            tmf.Show();
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            SettingManagerForm smf = new SettingManagerForm();
+            smf.Show();
+        }
+
+        private void FastAppButton_Click(object sender, EventArgs e)
+        {
+            FastAppForm faf = new FastAppForm();
+            faf.Show();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

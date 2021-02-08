@@ -40,6 +40,9 @@
             this.IconFinderSearchButton = new System.Windows.Forms.Button();
             this.GoogleSearchButton = new System.Windows.Forms.Button();
             this.DownloadVideoButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +68,7 @@
             // 
             // ClocksButton
             // 
-            this.ClocksButton.Location = new System.Drawing.Point(18, 114);
+            this.ClocksButton.Location = new System.Drawing.Point(18, 152);
             this.ClocksButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ClocksButton.Name = "ClocksButton";
             this.ClocksButton.Size = new System.Drawing.Size(134, 109);
@@ -76,60 +79,65 @@
             // 
             // TasksManagerButton
             // 
-            this.TasksManagerButton.Location = new System.Drawing.Point(18, 232);
+            this.TasksManagerButton.Location = new System.Drawing.Point(18, 270);
             this.TasksManagerButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TasksManagerButton.Name = "TasksManagerButton";
             this.TasksManagerButton.Size = new System.Drawing.Size(134, 109);
             this.TasksManagerButton.TabIndex = 6;
             this.TasksManagerButton.Text = "Планировщик";
             this.TasksManagerButton.UseVisualStyleBackColor = true;
+            this.TasksManagerButton.Click += new System.EventHandler(this.TasksManagerButton_Click);
             // 
             // FastAppButton
             // 
-            this.FastAppButton.Location = new System.Drawing.Point(303, 232);
+            this.FastAppButton.Location = new System.Drawing.Point(303, 270);
             this.FastAppButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FastAppButton.Name = "FastAppButton";
             this.FastAppButton.Size = new System.Drawing.Size(134, 109);
             this.FastAppButton.TabIndex = 5;
             this.FastAppButton.Text = "Быстрый доступ";
             this.FastAppButton.UseVisualStyleBackColor = true;
+            this.FastAppButton.Click += new System.EventHandler(this.FastAppButton_Click);
             // 
             // JokesButton
             // 
-            this.JokesButton.Location = new System.Drawing.Point(303, 114);
+            this.JokesButton.Location = new System.Drawing.Point(303, 152);
             this.JokesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.JokesButton.Name = "JokesButton";
             this.JokesButton.Size = new System.Drawing.Size(136, 109);
             this.JokesButton.TabIndex = 3;
             this.JokesButton.Text = "Анекдоты";
             this.JokesButton.UseVisualStyleBackColor = true;
+            this.JokesButton.Click += new System.EventHandler(this.JokesButton_Click);
             // 
             // SettingsButton
             // 
-            this.SettingsButton.Location = new System.Drawing.Point(160, 232);
+            this.SettingsButton.Location = new System.Drawing.Point(160, 270);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(134, 109);
             this.SettingsButton.TabIndex = 8;
             this.SettingsButton.Text = "Настройки";
             this.SettingsButton.UseVisualStyleBackColor = true;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(160, 351);
+            this.ExitButton.Location = new System.Drawing.Point(160, 389);
             this.ExitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(134, 109);
             this.ExitButton.TabIndex = 9;
             this.ExitButton.Text = "Выход";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // MusicSearchButton
             // 
-            this.MusicSearchButton.Location = new System.Drawing.Point(303, 52);
+            this.MusicSearchButton.Location = new System.Drawing.Point(303, 53);
             this.MusicSearchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MusicSearchButton.Name = "MusicSearchButton";
-            this.MusicSearchButton.Size = new System.Drawing.Size(134, 42);
+            this.MusicSearchButton.Size = new System.Drawing.Size(134, 45);
             this.MusicSearchButton.TabIndex = 13;
             this.MusicSearchButton.Text = "Music";
             this.MusicSearchButton.UseVisualStyleBackColor = true;
@@ -137,10 +145,10 @@
             // 
             // IconFinderSearchButton
             // 
-            this.IconFinderSearchButton.Location = new System.Drawing.Point(160, 52);
+            this.IconFinderSearchButton.Location = new System.Drawing.Point(160, 53);
             this.IconFinderSearchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.IconFinderSearchButton.Name = "IconFinderSearchButton";
-            this.IconFinderSearchButton.Size = new System.Drawing.Size(134, 42);
+            this.IconFinderSearchButton.Size = new System.Drawing.Size(134, 45);
             this.IconFinderSearchButton.TabIndex = 14;
             this.IconFinderSearchButton.Text = "IconFinder";
             this.IconFinderSearchButton.UseVisualStyleBackColor = true;
@@ -148,7 +156,7 @@
             // 
             // GoogleSearchButton
             // 
-            this.GoogleSearchButton.Location = new System.Drawing.Point(18, 49);
+            this.GoogleSearchButton.Location = new System.Drawing.Point(18, 52);
             this.GoogleSearchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GoogleSearchButton.Name = "GoogleSearchButton";
             this.GoogleSearchButton.Size = new System.Drawing.Size(134, 45);
@@ -159,20 +167,54 @@
             // 
             // DownloadVideoButton
             // 
-            this.DownloadVideoButton.Location = new System.Drawing.Point(160, 114);
+            this.DownloadVideoButton.Location = new System.Drawing.Point(160, 152);
             this.DownloadVideoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DownloadVideoButton.Name = "DownloadVideoButton";
             this.DownloadVideoButton.Size = new System.Drawing.Size(134, 109);
             this.DownloadVideoButton.TabIndex = 11;
             this.DownloadVideoButton.Text = "Скачивание видео";
             this.DownloadVideoButton.UseVisualStyleBackColor = true;
+            this.DownloadVideoButton.Click += new System.EventHandler(this.DownloadVideoButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 101);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 45);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Play";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(160, 101);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 45);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Stop";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(302, 101);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(134, 45);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Skip";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(456, 468);
+            this.ClientSize = new System.Drawing.Size(456, 506);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.GoogleSearchButton);
             this.Controls.Add(this.IconFinderSearchButton);
             this.Controls.Add(this.MusicSearchButton);
@@ -208,6 +250,9 @@
         private System.Windows.Forms.Button IconFinderSearchButton;
         private System.Windows.Forms.Button GoogleSearchButton;
         private System.Windows.Forms.Button DownloadVideoButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
