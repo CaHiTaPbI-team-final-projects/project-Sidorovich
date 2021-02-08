@@ -54,7 +54,6 @@
             this.MinutesTimer = new System.Windows.Forms.NumericUpDown();
             this.SecondsTimer = new System.Windows.Forms.NumericUpDown();
             this.HoursTimer = new System.Windows.Forms.NumericUpDown();
-            this.labelTimer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Hours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Seconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minutes)).BeginInit();
@@ -284,7 +283,6 @@
             this.groupBoxTimer.Controls.Add(this.MinutesTimer);
             this.groupBoxTimer.Controls.Add(this.SecondsTimer);
             this.groupBoxTimer.Controls.Add(this.HoursTimer);
-            this.groupBoxTimer.Controls.Add(this.labelTimer);
             this.groupBoxTimer.Location = new System.Drawing.Point(6, 0);
             this.groupBoxTimer.Name = "groupBoxTimer";
             this.groupBoxTimer.Size = new System.Drawing.Size(434, 388);
@@ -346,17 +344,6 @@
             this.HoursTimer.TabIndex = 9;
             this.HoursTimer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labelTimer
-            // 
-            this.labelTimer.AutoSize = true;
-            this.labelTimer.Font = new System.Drawing.Font("Trebuchet MS", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTimer.ForeColor = System.Drawing.Color.Crimson;
-            this.labelTimer.Location = new System.Drawing.Point(63, 23);
-            this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(318, 90);
-            this.labelTimer.TabIndex = 7;
-            this.labelTimer.Text = "00:00:00";
-            // 
             // TimerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -379,7 +366,6 @@
             this.groupBoxAlarm.ResumeLayout(false);
             this.groupBoxAlarm.PerformLayout();
             this.groupBoxTimer.ResumeLayout(false);
-            this.groupBoxTimer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinutesTimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SecondsTimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoursTimer)).EndInit();
@@ -413,6 +399,5 @@
         private System.Windows.Forms.NumericUpDown MinutesTimer;
         private System.Windows.Forms.NumericUpDown SecondsTimer;
         private System.Windows.Forms.NumericUpDown HoursTimer;
-        private System.Windows.Forms.Label labelTimer;
     }
 }
