@@ -182,7 +182,7 @@
             this.groupBoxStopwatch.Controls.Add(this.btnStart);
             this.groupBoxStopwatch.Controls.Add(this.btnReset);
             this.groupBoxStopwatch.Controls.Add(this.btnStop);
-            this.groupBoxStopwatch.Location = new System.Drawing.Point(12, 6);
+            this.groupBoxStopwatch.Location = new System.Drawing.Point(12, 12);
             this.groupBoxStopwatch.Name = "groupBoxStopwatch";
             this.groupBoxStopwatch.Size = new System.Drawing.Size(434, 388);
             this.groupBoxStopwatch.TabIndex = 14;
@@ -274,7 +274,6 @@
             this.groupBoxAlarm.Size = new System.Drawing.Size(434, 388);
             this.groupBoxAlarm.TabIndex = 8;
             this.groupBoxAlarm.TabStop = false;
-            this.groupBoxAlarm.Visible = false;
             // 
             // groupBoxTimer
             // 
@@ -283,7 +282,7 @@
             this.groupBoxTimer.Controls.Add(this.MinutesTimer);
             this.groupBoxTimer.Controls.Add(this.SecondsTimer);
             this.groupBoxTimer.Controls.Add(this.HoursTimer);
-            this.groupBoxTimer.Location = new System.Drawing.Point(6, 0);
+            this.groupBoxTimer.Location = new System.Drawing.Point(12, 6);
             this.groupBoxTimer.Name = "groupBoxTimer";
             this.groupBoxTimer.Size = new System.Drawing.Size(434, 388);
             this.groupBoxTimer.TabIndex = 15;

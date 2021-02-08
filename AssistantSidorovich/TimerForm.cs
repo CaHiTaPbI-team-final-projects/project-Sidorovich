@@ -203,7 +203,6 @@ namespace AssistantSidorovich
             timer1.Enabled = true;
 
             time = (Ht * 3600) + (Mt * 60) + St;
-            MessageBox.Show(time.ToString());
         }
 
         private void btnTurnOffTimer_Click(object sender, EventArgs e)
