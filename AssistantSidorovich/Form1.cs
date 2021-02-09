@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YTapi;
 using NYoutubeDL;
-
+using System.IO;
 namespace AssistantSidorovich
 {
     public partial class Form1 : Form
@@ -70,6 +70,8 @@ namespace AssistantSidorovich
                     }
                     else
                     {
+                        axWindowsMediaPlayer1.Visible = false;
+                        axWindowsMediaPlayer1.close();
                         textBox1.Text = yt.videoKey;
                         path = yt.videoTitile + "-" + yt.videoKey + ".mp4";
                         path = path.Replace("&amp;", "&");
@@ -82,9 +84,12 @@ namespace AssistantSidorovich
                         MessageBox.Show(path);
                         MessageBox.Show("Wait, we are dowbloading");
                         await youtubeDl.DownloadAsync($"https://www.youtube.com/watch?v={yt.videoKey}");
+                        new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, FileOptions.DeleteOnClose);
                         axWindowsMediaPlayer1.Visible = true;
                         axWindowsMediaPlayer1.URL = path;
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
                         
+
                     }
                 }
                 catch
