@@ -72,9 +72,20 @@ namespace AssistantSidorovich
                     {
                         axWindowsMediaPlayer1.Visible = false;
                         axWindowsMediaPlayer1.close();
-                        textBox1.Text = yt.videoKey;
+                        textBox1.Text = yt.videoTitile;
                         path = yt.videoTitile + "-" + yt.videoKey + ".mp4";
-                        path = path.Replace("&amp;", "&");
+                        {
+                            path = path.Replace("&amp;", "&");
+                            path = path.Replace("|", "_");
+                            path = path.Replace("*", "_");
+                            path = path.Replace("/", "_");
+                            path = path.Replace(@"\", "_");
+                            path = path.Replace(":", "_");
+                            path = path.Replace("?", "_");
+                            path = path.Replace("&quot;", "'");
+                        } // Fixing problems with path, cause video can contains symbols like /, or ?, which not exits in file names in Windows OC
+                        
+
 
                         var youtubeDl = new YoutubeDL();
 
