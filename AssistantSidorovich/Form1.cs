@@ -24,7 +24,7 @@ namespace AssistantSidorovich
         YTapi.Search yt = new YTapi.Search();
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            axWindowsMediaPlayer1.Visible = false;
         }
 
         private void GoogleSearchButton_Click(object sender, EventArgs e)
@@ -82,6 +82,9 @@ namespace AssistantSidorovich
                         MessageBox.Show(path);
                         MessageBox.Show("Wait, we are dowbloading");
                         await youtubeDl.DownloadAsync($"https://www.youtube.com/watch?v={yt.videoKey}");
+                        axWindowsMediaPlayer1.Visible = true;
+                        axWindowsMediaPlayer1.URL = path;
+                        
                     }
                 }
                 catch
@@ -130,5 +133,7 @@ namespace AssistantSidorovich
         {
             Application.Exit();
         }
+
+        
     }
 }
