@@ -17,6 +17,10 @@ namespace AssistantSidorovich
         public Form1()
         {
             InitializeComponent();
+            
+            notifyIcon1.Visible = false;
+            this.notifyIcon1.MouseDoubleClick += new MouseEventHandler(notifyIcon1_MouseDoubleClick);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
         }
         public string path { get; set; }
         public string address { get; set; }
@@ -150,6 +154,22 @@ namespace AssistantSidorovich
             Application.Exit();
         }
 
-        
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.ShowInTaskbar = false;
+                notifyIcon1.Visible = true;
+            }
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+            notifyIcon1.Visible = false;
+            this.ShowInTaskbar = true;
+            WindowState = FormWindowState.Normal;
+        }
     }
 }

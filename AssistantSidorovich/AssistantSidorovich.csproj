@@ -171,6 +171,7 @@
     <Content Include="DLL\Newtonsoft.Json.dll" />
     <Content Include="DLL\YTapi.dll" />
     <Content Include="images\bd002c66f00184b644ad0c23f70339020126d3c8_00.jpg" />
+    <Content Include="images\favico.ico" />
     <Content Include="images\rammstein_mein_herz_brennt_-_original_%28zf.fm%29.mp3" />
     <Content Include="images\Test.mp4" />
     <Content Include="Videos\youtube-dl.exe" />
