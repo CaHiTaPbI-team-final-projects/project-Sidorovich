@@ -27,16 +27,17 @@ namespace AssistantSidorovich
         {
             try
             {
-                if(String.IsNullOrWhiteSpace(downloadTextBox.Text) && downloadTextBox.Text.IndexOf("youtube.com/watch?") != -1)
+                if(String.IsNullOrWhiteSpace(downloadTextBox.Text) != true && downloadTextBox.Text.IndexOf("youtube.com/watch?") != -1)
                 {
-                    MessageBox.Show("Err, empty or incorrect url!");
+                    MessageBox.Show("Wait, we are downloading");
+
+                    youtubeDl.DownloadAsync(downloadTextBox.Text);
+                    MessageBox.Show($"Downloaded succsesfully at 'Videos folder', near the programm");
                 }
                 else
                 {
-                    MessageBox.Show("Wait, we are downloading");
-                    
-                    youtubeDl.DownloadAsync(downloadTextBox.Text);
-                    MessageBox.Show($"Downloaded succsesfully at 'Videos folder', near the programm");
+                    MessageBox.Show("Err, empty or incorrect url!");
+                   
                 }
                 
             }

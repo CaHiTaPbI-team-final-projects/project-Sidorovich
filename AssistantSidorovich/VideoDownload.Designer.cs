@@ -47,11 +47,13 @@
             // 
             this.downloadButton.BackColor = System.Drawing.SystemColors.Control;
             this.downloadButton.ForeColor = System.Drawing.Color.Red;
-            this.downloadButton.Location = new System.Drawing.Point(130, 98);
+            this.downloadButton.Location = new System.Drawing.Point(112, 107);
+            this.downloadButton.Margin = new System.Windows.Forms.Padding(4);
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(111, 23);
             this.downloadButton.TabIndex = 1;
             this.downloadButton.Text = "Download";
+            this.downloadButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.downloadButton.UseVisualStyleBackColor = false;
             this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
@@ -79,8 +81,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(346, 143);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.downloadButton);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.downloadTextBox);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
