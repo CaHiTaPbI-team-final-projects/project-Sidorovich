@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YTapi;
 using NYoutubeDL;
-
+using System.IO;
 namespace AssistantSidorovich
 {
     public partial class Form1 : Form
@@ -24,7 +24,7 @@ namespace AssistantSidorovich
         YTapi.Search yt = new YTapi.Search();
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            axWindowsMediaPlayer1.Visible = false;
         }
 
         private void GoogleSearchButton_Click(object sender, EventArgs e)
@@ -70,9 +70,22 @@ namespace AssistantSidorovich
                     }
                     else
                     {
-                        textBox1.Text = yt.videoKey;
+                        axWindowsMediaPlayer1.Visible = false;
+                        axWindowsMediaPlayer1.close();
+                        textBox1.Text = yt.videoTitile;
                         path = yt.videoTitile + "-" + yt.videoKey + ".mp4";
-                        path = path.Replace("&amp;", "&");
+                        {
+                            path = path.Replace("&amp;", "&");
+                            path = path.Replace("|", "_");
+                            path = path.Replace("*", "_");
+                            path = path.Replace("/", "_");
+                            path = path.Replace(@"\", "_");
+                            path = path.Replace(":", "_");
+                            path = path.Replace("?", "_");
+                            path = path.Replace("&quot;", "'");
+                        } // Fixing problems with path, cause video can contains symbols like /, or ?, which not exits in file names in Windows OC
+                        
+
 
                         var youtubeDl = new YoutubeDL();
 
@@ -82,6 +95,12 @@ namespace AssistantSidorovich
                         MessageBox.Show(path);
                         MessageBox.Show("Wait, we are dowbloading");
                         await youtubeDl.DownloadAsync($"https://www.youtube.com/watch?v={yt.videoKey}");
+                        new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, FileOptions.DeleteOnClose);
+                        axWindowsMediaPlayer1.Visible = true;
+                        axWindowsMediaPlayer1.URL = path;
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                        
+
                     }
                 }
                 catch
@@ -130,5 +149,7 @@ namespace AssistantSidorovich
         {
             Application.Exit();
         }
+
+        
     }
 }
