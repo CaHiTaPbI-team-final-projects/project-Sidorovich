@@ -14,13 +14,16 @@ namespace AssistantSidorovich
     public partial class VideoDownload : Form
     {
         YoutubeDL youtubeDl = new YoutubeDL();
+        public string customPath { get; set; }
+        public bool isCustomPathTriggered { get; set; }
         public VideoDownload()
         {
             InitializeComponent();
             
             youtubeDl.YoutubeDlPath = @"..\..\Videos\youtube-dl.exe";
-            youtubeDl.Options.FilesystemOptions.Output = @"..\..\Videos\%(title)s.%(ext)s";
+            
             youtubeDl.Options.FilesystemOptions.RestrictFilenames = true;
+            isCustomPathTriggered = false;
         }
 
         private void downloadButton_Click(object sender, EventArgs e)
@@ -30,9 +33,22 @@ namespace AssistantSidorovich
                 if(String.IsNullOrWhiteSpace(downloadTextBox.Text) != true && downloadTextBox.Text.IndexOf("youtube.com/watch?") != -1)
                 {
                     MessageBox.Show("Wait, we are downloading");
-
+                    if (isCustomPathTriggered == false)
+                    {
+                        youtubeDl.Options.FilesystemOptions.Output = @"..\..\Videos\%(title)s.%(ext)s";
+                    }
+                    else
+                    {
+                        youtubeDl.Options.FilesystemOptions.Output = customPath;
+                    }
                     youtubeDl.DownloadAsync(downloadTextBox.Text);
-                    MessageBox.Show($"Downloaded succsesfully at 'Videos folder', near the programm");
+                    if(isCustomPathTriggered == false)
+                        MessageBox.Show($"Downloaded succsesfully at 'Videos folder', near the programm");
+                    else
+                        MessageBox.Show($"Downloaded succsesfully at {customPath}");
+
+
+
                 }
                 else
                 {
@@ -88,6 +104,22 @@ namespace AssistantSidorovich
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void selecetPathButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            DialogResult result = fbd.ShowDialog();
+            if (fbd.SelectedPath != null && result == DialogResult.OK)
+            {
+                customPath = fbd.SelectedPath + @"\%(title)s.%(ext)s";
+                isCustomPathTriggered = true;
+                
+            }
+            else
+            {
+                MessageBox.Show("Path Not selected");
             }
         }
     }
