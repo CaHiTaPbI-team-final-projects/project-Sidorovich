@@ -94,6 +94,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bind.cs" />
     <Compile Include="Models\Taskk.cs" />
     <Compile Include="VideoDownload.cs">
       <SubType>Form</SubType>
