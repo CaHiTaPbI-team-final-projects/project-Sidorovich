@@ -10,7 +10,7 @@ namespace AssistantSidorovich.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime Deadline { get; set; }
+        public string Deadline { get; set; }
 
         public override string ToString()
         {
