@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AssistantSidorovich.Models;
 using System.IO;
-
+using WK.Libraries.HotkeyListenerNS;
+using System.Windows.Input;
+using System.Threading;
+using System.Diagnostics;
+using System.Xml;
+using System.Xml.Linq;
 namespace AssistantSidorovich
 {
     public partial class FastAppForm : Form
@@ -17,10 +22,18 @@ namespace AssistantSidorovich
         List<Bind> binds;
         string fullName;
         string name;
+        string path;
+        XDocument xd;
+        XElement root;
+        HotkeyListener hkl = new HotkeyListener();
+
         public FastAppForm()
         {
             InitializeComponent();
             binds = new List<Bind>();
+            path = @"..\..\Data\HotKeys.xml";
+            xd = XDocument.Load(path);
+            root = xd.Element("root");
         }
         
 
@@ -44,31 +57,27 @@ namespace AssistantSidorovich
 
         private void FastAppForm_Load(object sender, EventArgs e)
         {
-            for (int i = 160; i <= 165; i++)
+            LoadBindList();
+            hkl.HotkeyPressed += Hkl_HotkeyPressed;
+            BindButton1CB.Items.Add(Keys.Control);
+            BindButton2CB.Items.Add(Keys.Control);
+            BindButton1CB.Items.Add(Keys.Alt);
+            BindButton2CB.Items.Add(Keys.Alt);
+            BindButton1CB.Items.Add(Keys.Shift);
+            BindButton2CB.Items.Add(Keys.Shift);
+
+            for (int i = 8; i<=10;i++)
             {
-                BindButton1CB.Items.Add((Keys)i);
-            }
-            BindButton1CB.Items.Add((Keys)91);
-            BindButton1CB.Items.Add((Keys)92);
-            
-            for(int i = 8; i<=10;i++)
-            {
-                BindButton2CB.Items.Add((Keys)i);
                 BindButton3CB.Items.Add((Keys)i);
             }
-            BindButton2CB.Items.Add((Keys)13);
             BindButton3CB.Items.Add((Keys)13);
-            BindButton2CB.Items.Add((Keys)19);
             BindButton3CB.Items.Add((Keys)19);
-            BindButton2CB.Items.Add((Keys)20);
-            BindButton3CB.Items.Add((Keys)20);            
-            BindButton2CB.Items.Add((Keys)27);
+            BindButton3CB.Items.Add((Keys)20);          
             BindButton3CB.Items.Add((Keys)27);
             for (int i = 32; i <= 57; i++)
             {
                 if (i != 41 && i != 42 && i != 43 && i != 47)
                 {
-                    BindButton2CB.Items.Add((Keys)i);
                     BindButton3CB.Items.Add((Keys)i);
                 }
             }
@@ -76,36 +85,32 @@ namespace AssistantSidorovich
             {
                 if (i != 91 && i != 92 && i != 93 && i != 94 && i != 95)
                 {
-                    BindButton2CB.Items.Add((Keys)i);
                     BindButton3CB.Items.Add((Keys)i);
                 }
             }
-            BindButton2CB.Items.Add((Keys)144);
             BindButton3CB.Items.Add((Keys)144);
-            BindButton2CB.Items.Add((Keys)145);
             BindButton3CB.Items.Add((Keys)145);
             //8-10, 13, 19-20, 27, 32-40, 44-46, 48-57, 65-90, 96-135, 144, 145
 
             BindButton1CB.SelectedIndex = 0;
-            BindButton2CB.SelectedIndex = 1;
+            BindButton3CB.SelectedIndex = 29;
             AutoLoadCB.Items.Add("Автозапуск при запуске Windows");
             AutoLoadCB.Items.Add("Автозапуск при запуске проиложения");
             AutoLoadCB.Items.Add("Без автозапуска");
             AutoLoadCB.SelectedIndex = 2;
-            
         }
 
         private void TwoBindsRB_CheckedChanged(object sender, EventArgs e)
         {
-            BindButton3CB.Enabled = false;
-            BindButton3CB.SelectedIndex = -1;
+            BindButton2CB.Enabled = false;
+            BindButton2CB.SelectedIndex = -1;
 
         }
 
         private void ThreeBindsRB_CheckedChanged(object sender, EventArgs e)
         {
-            BindButton3CB.Enabled = true;
-            BindButton3CB.SelectedIndex = 0;
+            BindButton2CB.Enabled = true;
+            BindButton2CB.SelectedIndex = 1;
         }
 
         private void AutoLoadCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,30 +120,120 @@ namespace AssistantSidorovich
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Bind b = new Bind()
+            //if(string.IsNullOrWhiteSpace())
+            int first = (int)(Keys)BindButton1CB.SelectedItem;
+            int third = (int)(Keys)BindButton3CB.SelectedItem;
+            if (BindButton2CB.Enabled == true)
             {
-                FullName = fullName,
-                Name = name,
-                first = (Keys)BindButton1CB.SelectedItem,
-                second = (Keys)BindButton2CB.SelectedItem,
-                third = (Keys)BindButton3CB.SelectedItem
-            };
-           binds.Add(b);
-           
-           LoadList();
+                int second = (int)(Keys)BindButton2CB.SelectedItem;
+                if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex)
+                {
+                    
+                    Bind b = new Bind()
+                    {
+                        FullName = fullName,
+                        Name = name,
+                        AutoLoad = AutoLoadCB.SelectedIndex,
+                        FirstBind = first,
+                        SecondBind = second,
+                        ThirdBind = third
+                    };
+                    binds.Add(b);
+                    hkl.Add(new Hotkey((Keys)first | (Keys)second, (Keys)third));
+                    LoadList();
+                    xd.Element("root").Add(new XElement("HotKey", new XAttribute("FullName", b.FullName), new XAttribute("Name",
+                    b.Name), new XAttribute("AutoLoad", b.AutoLoad), new XAttribute("first", b.FirstBind), new XAttribute("second", b.SecondBind), new XAttribute("third", b.ThirdBind)));
+                    xd.Save(path);
+                }
+                else
+                {           
+                    MessageBox.Show("Вы добавили одинаковые горячие кнопки!");
+                }
+            }
+            else
+            {
+
+                if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex)
+                {
+                    Bind b = new Bind()
+                    {
+                        FullName = fullName,
+                        Name = name,
+                        AutoLoad = AutoLoadCB.SelectedIndex,
+                        FirstBind = first,
+                        ThirdBind = third
+                    };
+                    binds.Add(b);
+                    hkl.Add(new Hotkey((Keys)first, (Keys)third));
+                    LoadList();
+                    xd.Element("root").Add(new XElement("HotKey", new XAttribute("FullName", b.FullName), new XAttribute("Name",
+                    b.Name), new XAttribute("AutoLoad", b.AutoLoad), new XAttribute("first", b.FirstBind), new XAttribute("second", 0), new XAttribute("third", b.ThirdBind)));
+                    xd.Save(path);
+                }
+                else
+                {
+                    MessageBox.Show("Вы добавили одинаковые горячие кнопки!");
+                }
+            }
+
         }
 
         private void LoadList()
         {
-            foreach (var a in binds)
-                BindsList.Items.Add(a.ToString());
+            BindsList.Items.Clear();
+            foreach (var b in binds)
+                BindsList.Items.Add(b.ToString());
+        }
+
+        private void LoadBindList()
+        {
+            var Binds = root.Elements("HotKey").ToList();
+            Bind b;
+            foreach (var bind in Binds)
+            {
+                b = new Bind()
+                {
+                    FullName = bind.Attribute("FullName").Value,
+                    Name = bind.Attribute("Name").Value,
+                    AutoLoad = Convert.ToInt32(bind.Attribute("AutoLoad").Value),
+                    FirstBind = Convert.ToInt32(bind.Attribute("first").Value),
+                    SecondBind = Convert.ToInt32(bind.Attribute("second").Value),
+                    ThirdBind = Convert.ToInt32(bind.Attribute("third").Value),
+                };
+                binds.Add(b);
+            }
+            LoadList();
         }
 
         private void FastAppForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 'A')
+            
+        }
+
+        private void Hkl_HotkeyPressed(object sender, HotkeyEventArgs e)
+        {
+            foreach (var b in binds)
             {
-                MessageBox.Show("Fuck you!");
+                if (e.Hotkey == new Hotkey((Keys)b.FirstBind, (Keys)b.ThirdBind))
+                {
+                    Process.Start($"{b.FullName}");
+                }
+            }
+        }
+
+        private void DelButton_Click(object sender, EventArgs e)
+        {
+            if(BindsList.SelectedIndex != -1)
+            {
+                int index = BindsList.SelectedIndex;
+                xd.Elements("root").Elements("HotKey").Where(t => t.Attribute("FullName").Value == binds[index].FullName).Remove();
+                binds.RemoveAt(index);
+                xd.Save(path);
+                LoadList();               
+            }
+            else
+            {
+                MessageBox.Show("Выберите горячую клавишу для удаления!");
             }
         }
     }
