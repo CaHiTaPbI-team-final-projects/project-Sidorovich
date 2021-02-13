@@ -79,8 +79,9 @@
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(88, 23);
             this.SaveButton.TabIndex = 3;
-            this.SaveButton.Text = "Сохранить";
+            this.SaveButton.Text = "Обновить";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // BindButton3CB
             // 
