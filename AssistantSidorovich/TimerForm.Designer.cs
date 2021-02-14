@@ -167,7 +167,7 @@
             this.SetAlarm.Name = "SetAlarm";
             this.SetAlarm.Size = new System.Drawing.Size(124, 49);
             this.SetAlarm.TabIndex = 12;
-            this.SetAlarm.Text = "Turn on";
+            this.SetAlarm.Text = "Включить";
             this.SetAlarm.UseVisualStyleBackColor = false;
             this.SetAlarm.Click += new System.EventHandler(this.SetAlarm_Click);
             // 
@@ -179,7 +179,7 @@
             this.AlarmOff.Name = "AlarmOff";
             this.AlarmOff.Size = new System.Drawing.Size(124, 49);
             this.AlarmOff.TabIndex = 13;
-            this.AlarmOff.Text = "Turn off";
+            this.AlarmOff.Text = "Выключить";
             this.AlarmOff.UseVisualStyleBackColor = false;
             this.AlarmOff.Click += new System.EventHandler(this.AlarmOff_Click);
             // 
@@ -207,7 +207,7 @@
             this.groupBoxStopwatch.Controls.Add(this.btnStart);
             this.groupBoxStopwatch.Controls.Add(this.btnReset);
             this.groupBoxStopwatch.Controls.Add(this.btnStop);
-            this.groupBoxStopwatch.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxStopwatch.Location = new System.Drawing.Point(12, 1);
             this.groupBoxStopwatch.Name = "groupBoxStopwatch";
             this.groupBoxStopwatch.Size = new System.Drawing.Size(434, 388);
             this.groupBoxStopwatch.TabIndex = 15;
@@ -261,7 +261,7 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(124, 49);
             this.btnStart.TabIndex = 5;
-            this.btnStart.Text = "Start";
+            this.btnStart.Text = "Старт";
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click_1);
             // 
@@ -273,7 +273,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(124, 49);
             this.btnReset.TabIndex = 7;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "Сброс";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
@@ -285,7 +285,7 @@
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(124, 49);
             this.btnStop.TabIndex = 6;
-            this.btnStop.Text = "Stop";
+            this.btnStop.Text = "Стоп";
             this.btnStop.UseVisualStyleBackColor = false;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click_1);
             // 
@@ -351,7 +351,7 @@
             this.groupBoxTimer.Controls.Add(this.MinutesTimer);
             this.groupBoxTimer.Controls.Add(this.SecondsTimer);
             this.groupBoxTimer.Controls.Add(this.HoursTimer);
-            this.groupBoxTimer.Location = new System.Drawing.Point(12, 4);
+            this.groupBoxTimer.Location = new System.Drawing.Point(12, -6);
             this.groupBoxTimer.Name = "groupBoxTimer";
             this.groupBoxTimer.Size = new System.Drawing.Size(434, 388);
             this.groupBoxTimer.TabIndex = 16;
