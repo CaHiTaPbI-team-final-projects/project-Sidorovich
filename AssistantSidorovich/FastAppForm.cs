@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.Win32;
+using System.Reflection;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,15 +37,15 @@ namespace AssistantSidorovich
             xd = XDocument.Load(path);
             root = xd.Element("root");
         }
-        
+
 
         private void ChooseButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
+            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
             ofd.Filter = "All Files (*.*)|*.*";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                AddressBox.Text = Path.GetFileName( ofd.FileName);
+                AddressBox.Text = Path.GetFileName(ofd.FileName);
                 fullName = ofd.FileName;
                 name = Path.GetFileName(ofd.FileName);
             }
@@ -52,12 +54,13 @@ namespace AssistantSidorovich
         private void ClearButton_Click(object sender, EventArgs e)
         {
             AddressBox.Clear();
-            
+
         }
 
         private void FastAppForm_Load(object sender, EventArgs e)
         {
             LoadBindList();
+            AutoLoadFunc();
             hkl.HotkeyPressed += Hkl_HotkeyPressed;
             BindButton1CB.Items.Add(Keys.Control);
             BindButton2CB.Items.Add(Keys.Control);
@@ -66,13 +69,13 @@ namespace AssistantSidorovich
             BindButton1CB.Items.Add(Keys.Shift);
             BindButton2CB.Items.Add(Keys.Shift);
 
-            for (int i = 8; i<=10;i++)
+            for (int i = 8; i <= 10; i++)
             {
                 BindButton3CB.Items.Add((Keys)i);
             }
             BindButton3CB.Items.Add((Keys)13);
             BindButton3CB.Items.Add((Keys)19);
-            BindButton3CB.Items.Add((Keys)20);          
+            BindButton3CB.Items.Add((Keys)20);
             BindButton3CB.Items.Add((Keys)27);
             for (int i = 32; i <= 57; i++)
             {
@@ -128,7 +131,7 @@ namespace AssistantSidorovich
                 int second = (int)(Keys)BindButton2CB.SelectedItem;
                 if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex)
                 {
-                    
+
                     Bind b = new Bind()
                     {
                         FullName = fullName,
@@ -144,9 +147,11 @@ namespace AssistantSidorovich
                     xd.Element("root").Add(new XElement("HotKey", new XAttribute("FullName", b.FullName), new XAttribute("Name",
                     b.Name), new XAttribute("AutoLoad", b.AutoLoad), new XAttribute("first", b.FirstBind), new XAttribute("second", b.SecondBind), new XAttribute("third", b.ThirdBind)));
                     xd.Save(path);
+
+                    AutoLoadFunc();
                 }
                 else
-                {           
+                {
                     MessageBox.Show("Вы добавили одинаковые горячие кнопки!");
                 }
             }
@@ -169,6 +174,8 @@ namespace AssistantSidorovich
                     xd.Element("root").Add(new XElement("HotKey", new XAttribute("FullName", b.FullName), new XAttribute("Name",
                     b.Name), new XAttribute("AutoLoad", b.AutoLoad), new XAttribute("first", b.FirstBind), new XAttribute("second", 0), new XAttribute("third", b.ThirdBind)));
                     xd.Save(path);
+
+                    AutoLoadFunc();
                 }
                 else
                 {
@@ -207,7 +214,7 @@ namespace AssistantSidorovich
 
         private void FastAppForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void Hkl_HotkeyPressed(object sender, HotkeyEventArgs e)
@@ -223,18 +230,61 @@ namespace AssistantSidorovich
 
         private void DelButton_Click(object sender, EventArgs e)
         {
-            if(BindsList.SelectedIndex != -1)
+            if (BindsList.SelectedIndex != -1)
             {
                 int index = BindsList.SelectedIndex;
                 xd.Elements("root").Elements("HotKey").Where(t => t.Attribute("FullName").Value == binds[index].FullName).Remove();
+                RegistryKey registry;
+                registry = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                if (registry.GetValue(binds[index].Name) != null)
+                {
+                    registry.DeleteValue(binds[index].Name);
+                }
                 binds.RemoveAt(index);
                 xd.Save(path);
-                LoadList();               
+                LoadList();
+                registry.Flush();
+                registry.Close();
             }
             else
             {
                 MessageBox.Show("Выберите горячую клавишу для удаления!");
             }
+        }
+
+        private void AutoLoadFunc()
+        {
+            RegistryKey registry;
+            registry = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+            foreach (var b in binds)
+            {
+                
+                try
+                {
+                    if (b.AutoLoad == 2 || b.AutoLoad == 1)
+                    {
+                        if(registry.GetValue(b.Name) != null)
+                        {
+                            registry.DeleteValue(b.Name);
+                        }                        
+                    }
+                    else if (b.AutoLoad == 0)
+                    {
+                        registry.SetValue(b.Name, b.FullName);
+                    }                    
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+                registry.Flush();
+            }
+            registry.Close();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            AutoLoadFunc();
         }
     }
 }
