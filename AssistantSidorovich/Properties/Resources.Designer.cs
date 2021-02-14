@@ -63,9 +63,29 @@ namespace AssistantSidorovich.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3331 {
+            get {
+                object obj = ResourceManager.GetObject("3331", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bd002c66f00184b644ad0c23f70339020126d3c8_00 {
             get {
                 object obj = ResourceManager.GetObject("bd002c66f00184b644ad0c23f70339020126d3c8_00", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bd002c66f00184b644ad0c23f70339020126d3c8_001 {
+            get {
+                object obj = ResourceManager.GetObject("bd002c66f00184b644ad0c23f70339020126d3c8_001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

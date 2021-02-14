@@ -56,6 +56,10 @@ namespace AssistantSidorovich
 
                         xd.Save(path);
                         loadTaskList();
+
+                        Form1 fm = new Form1();
+                        fm.loadVoiceLines();
+                        fm.playVoiceLine(0);
                     }
                     else
                     {
@@ -137,7 +141,7 @@ namespace AssistantSidorovich
                 try
                 {
                     string oldTitle = (listBoxTasks.SelectedItem as Taskk).Title;
-
+                    richTextBox1.Clear();
                     xd.Elements("root").Elements("task").Where(t => t.Attribute("title").Value == oldTitle).Remove();
 
                     xd.Save(path);
@@ -168,25 +172,29 @@ namespace AssistantSidorovich
         {
             listBoxTasks.Items.Clear();
             var tasks = root.Elements("task").ToList();
-            Taskk t = null;
 
-            foreach(var task in tasks)
+            if(tasks.Count!=0)
             {
-                t = new Taskk()
-                {
-                    Title = task.Attribute("title").Value,
-                    Description = task.Attribute("description").Value,
-                    Deadline = task.Attribute("deadline").Value
-                };
+                Taskk t = null;
 
-                listBoxTasks.Items.Add(t);
+                foreach (var task in tasks)
+                {
+                    t = new Taskk()
+                    {
+                        Title = task.Attribute("title").Value,
+                        Description = task.Attribute("description").Value,
+                        Deadline = task.Attribute("deadline").Value
+                    };
+
+                    listBoxTasks.Items.Add(t);
+                }
+                listBoxTasks.DisplayMember = t.ToString();
             }
-            listBoxTasks.DisplayMember = t.ToString();
         }
 
         private void listBoxTasks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listBoxTasks.SelectedIndex != -1)
+            if(listBoxTasks.SelectedIndex != -1 && listBoxTasks.Items.Count !=0)
             {
                 richTextBox1.Clear();
                 richTextBox1.Text = (listBoxTasks.SelectedItem as Taskk).Description;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoDownload));
             this.downloadTextBox = new System.Windows.Forms.TextBox();
             this.downloadButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -36,9 +37,11 @@
             // 
             // downloadTextBox
             // 
-            this.downloadTextBox.Location = new System.Drawing.Point(28, 38);
+            this.downloadTextBox.BackColor = System.Drawing.Color.LightGray;
+            this.downloadTextBox.Location = new System.Drawing.Point(42, 58);
+            this.downloadTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.downloadTextBox.Name = "downloadTextBox";
-            this.downloadTextBox.Size = new System.Drawing.Size(246, 20);
+            this.downloadTextBox.Size = new System.Drawing.Size(367, 26);
             this.downloadTextBox.TabIndex = 0;
             this.downloadTextBox.Text = "Youtube URL";
             this.downloadTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -46,12 +49,12 @@
             // 
             // downloadButton
             // 
-            this.downloadButton.BackColor = System.Drawing.SystemColors.Control;
+            this.downloadButton.BackColor = System.Drawing.Color.LightGray;
             this.downloadButton.ForeColor = System.Drawing.Color.Red;
-            this.downloadButton.Location = new System.Drawing.Point(28, 109);
-            this.downloadButton.Margin = new System.Windows.Forms.Padding(4);
+            this.downloadButton.Location = new System.Drawing.Point(42, 168);
+            this.downloadButton.Margin = new System.Windows.Forms.Padding(6);
             this.downloadButton.Name = "downloadButton";
-            this.downloadButton.Size = new System.Drawing.Size(111, 23);
+            this.downloadButton.Size = new System.Drawing.Size(166, 35);
             this.downloadButton.TabIndex = 1;
             this.downloadButton.Text = "Скачать";
             this.downloadButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -70,38 +73,43 @@
             ".mkv",
             ".flv",
             ".webm"});
-            this.comboBox1.Location = new System.Drawing.Point(280, 38);
+            this.comboBox1.Location = new System.Drawing.Point(420, 58);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(51, 21);
+            this.comboBox1.Size = new System.Drawing.Size(74, 28);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // selecetPathButton
             // 
-            this.selecetPathButton.Location = new System.Drawing.Point(211, 108);
+            this.selecetPathButton.BackColor = System.Drawing.Color.LightGray;
+            this.selecetPathButton.Location = new System.Drawing.Point(316, 166);
+            this.selecetPathButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.selecetPathButton.Name = "selecetPathButton";
-            this.selecetPathButton.Size = new System.Drawing.Size(120, 23);
+            this.selecetPathButton.Size = new System.Drawing.Size(180, 35);
             this.selecetPathButton.TabIndex = 3;
             this.selecetPathButton.Text = "Выбрать путь";
-            this.selecetPathButton.UseVisualStyleBackColor = true;
+            this.selecetPathButton.UseVisualStyleBackColor = false;
             this.selecetPathButton.Click += new System.EventHandler(this.selecetPathButton_Click);
             // 
             // VideoDownload
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(346, 143);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(519, 220);
             this.Controls.Add(this.selecetPathButton);
             this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.downloadTextBox);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VideoDownload";
-            this.Text = "MusicManagerForm";
+            this.Text = "Загрузка видео";
             this.Load += new System.EventHandler(this.VideoDownload_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

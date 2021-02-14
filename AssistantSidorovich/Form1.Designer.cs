@@ -53,123 +53,147 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 28);
+            this.panel1.Size = new System.Drawing.Size(456, 43);
             this.panel1.TabIndex = 7;
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 26);
+            this.textBox1.Size = new System.Drawing.Size(456, 35);
             this.textBox1.TabIndex = 9;
             // 
             // ClocksButton
             // 
-            this.ClocksButton.Location = new System.Drawing.Point(12, 99);
+            this.ClocksButton.BackColor = System.Drawing.Color.LightGray;
+            this.ClocksButton.Location = new System.Drawing.Point(18, 152);
+            this.ClocksButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClocksButton.Name = "ClocksButton";
-            this.ClocksButton.Size = new System.Drawing.Size(89, 71);
+            this.ClocksButton.Size = new System.Drawing.Size(134, 109);
             this.ClocksButton.TabIndex = 4;
             this.ClocksButton.Text = "Часы";
-            this.ClocksButton.UseVisualStyleBackColor = true;
+            this.ClocksButton.UseVisualStyleBackColor = false;
             this.ClocksButton.Click += new System.EventHandler(this.ClocksButton_Click);
             // 
             // TasksManagerButton
             // 
-            this.TasksManagerButton.Location = new System.Drawing.Point(12, 175);
+            this.TasksManagerButton.BackColor = System.Drawing.Color.LightGray;
+            this.TasksManagerButton.Location = new System.Drawing.Point(18, 269);
+            this.TasksManagerButton.Margin = new System.Windows.Forms.Padding(4);
             this.TasksManagerButton.Name = "TasksManagerButton";
-            this.TasksManagerButton.Size = new System.Drawing.Size(89, 71);
+            this.TasksManagerButton.Size = new System.Drawing.Size(134, 109);
             this.TasksManagerButton.TabIndex = 6;
             this.TasksManagerButton.Text = "Планировщик";
-            this.TasksManagerButton.UseVisualStyleBackColor = true;
+            this.TasksManagerButton.UseVisualStyleBackColor = false;
             this.TasksManagerButton.Click += new System.EventHandler(this.TasksManagerButton_Click);
             // 
             // FastAppButton
             // 
-            this.FastAppButton.Location = new System.Drawing.Point(202, 175);
+            this.FastAppButton.BackColor = System.Drawing.Color.LightGray;
+            this.FastAppButton.Location = new System.Drawing.Point(303, 269);
+            this.FastAppButton.Margin = new System.Windows.Forms.Padding(4);
             this.FastAppButton.Name = "FastAppButton";
-            this.FastAppButton.Size = new System.Drawing.Size(89, 71);
+            this.FastAppButton.Size = new System.Drawing.Size(134, 109);
             this.FastAppButton.TabIndex = 5;
             this.FastAppButton.Text = "Быстрый доступ";
-            this.FastAppButton.UseVisualStyleBackColor = true;
+            this.FastAppButton.UseVisualStyleBackColor = false;
             this.FastAppButton.Click += new System.EventHandler(this.FastAppButton_Click);
             // 
             // JokesButton
             // 
-            this.JokesButton.Location = new System.Drawing.Point(202, 99);
+            this.JokesButton.BackColor = System.Drawing.Color.LightGray;
+            this.JokesButton.Location = new System.Drawing.Point(303, 152);
+            this.JokesButton.Margin = new System.Windows.Forms.Padding(4);
             this.JokesButton.Name = "JokesButton";
-            this.JokesButton.Size = new System.Drawing.Size(91, 71);
+            this.JokesButton.Size = new System.Drawing.Size(136, 109);
             this.JokesButton.TabIndex = 3;
             this.JokesButton.Text = "Анекдоты";
-            this.JokesButton.UseVisualStyleBackColor = true;
+            this.JokesButton.UseVisualStyleBackColor = false;
             this.JokesButton.Click += new System.EventHandler(this.JokesButton_Click);
             // 
             // SettingsButton
             // 
-            this.SettingsButton.Location = new System.Drawing.Point(107, 175);
+            this.SettingsButton.BackColor = System.Drawing.Color.LightGray;
+            this.SettingsButton.Location = new System.Drawing.Point(160, 269);
+            this.SettingsButton.Margin = new System.Windows.Forms.Padding(4);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(89, 71);
+            this.SettingsButton.Size = new System.Drawing.Size(134, 109);
             this.SettingsButton.TabIndex = 8;
             this.SettingsButton.Text = "Настройки";
-            this.SettingsButton.UseVisualStyleBackColor = true;
+            this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(107, 253);
+            this.ExitButton.BackColor = System.Drawing.Color.LightGray;
+            this.ExitButton.Location = new System.Drawing.Point(160, 389);
+            this.ExitButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(89, 71);
+            this.ExitButton.Size = new System.Drawing.Size(134, 109);
             this.ExitButton.TabIndex = 9;
             this.ExitButton.Text = "Выход";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // MusicSearchButton
             // 
-            this.MusicSearchButton.Location = new System.Drawing.Point(202, 34);
+            this.MusicSearchButton.BackColor = System.Drawing.Color.LightGray;
+            this.MusicSearchButton.Location = new System.Drawing.Point(303, 52);
+            this.MusicSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.MusicSearchButton.Name = "MusicSearchButton";
-            this.MusicSearchButton.Size = new System.Drawing.Size(89, 29);
+            this.MusicSearchButton.Size = new System.Drawing.Size(134, 44);
             this.MusicSearchButton.TabIndex = 13;
             this.MusicSearchButton.Text = "Music";
-            this.MusicSearchButton.UseVisualStyleBackColor = true;
+            this.MusicSearchButton.UseVisualStyleBackColor = false;
             this.MusicSearchButton.Click += new System.EventHandler(this.MusicSearchButton_Click);
             // 
             // IconFinderSearchButton
             // 
-            this.IconFinderSearchButton.Location = new System.Drawing.Point(107, 34);
+            this.IconFinderSearchButton.BackColor = System.Drawing.Color.LightGray;
+            this.IconFinderSearchButton.Location = new System.Drawing.Point(160, 52);
+            this.IconFinderSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.IconFinderSearchButton.Name = "IconFinderSearchButton";
-            this.IconFinderSearchButton.Size = new System.Drawing.Size(89, 29);
+            this.IconFinderSearchButton.Size = new System.Drawing.Size(134, 44);
             this.IconFinderSearchButton.TabIndex = 14;
             this.IconFinderSearchButton.Text = "IconFinder";
-            this.IconFinderSearchButton.UseVisualStyleBackColor = true;
+            this.IconFinderSearchButton.UseVisualStyleBackColor = false;
             this.IconFinderSearchButton.Click += new System.EventHandler(this.IconFinderSearchButton_Click);
             // 
             // GoogleSearchButton
             // 
-            this.GoogleSearchButton.Location = new System.Drawing.Point(12, 34);
+            this.GoogleSearchButton.BackColor = System.Drawing.Color.LightGray;
+            this.GoogleSearchButton.Location = new System.Drawing.Point(18, 52);
+            this.GoogleSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.GoogleSearchButton.Name = "GoogleSearchButton";
-            this.GoogleSearchButton.Size = new System.Drawing.Size(89, 29);
+            this.GoogleSearchButton.Size = new System.Drawing.Size(134, 44);
             this.GoogleSearchButton.TabIndex = 15;
             this.GoogleSearchButton.Text = "  Google";
-            this.GoogleSearchButton.UseVisualStyleBackColor = true;
+            this.GoogleSearchButton.UseVisualStyleBackColor = false;
             this.GoogleSearchButton.Click += new System.EventHandler(this.GoogleSearchButton_Click);
             // 
             // DownloadVideoButton
             // 
-            this.DownloadVideoButton.Location = new System.Drawing.Point(107, 99);
+            this.DownloadVideoButton.BackColor = System.Drawing.Color.LightGray;
+            this.DownloadVideoButton.Location = new System.Drawing.Point(160, 152);
+            this.DownloadVideoButton.Margin = new System.Windows.Forms.Padding(4);
             this.DownloadVideoButton.Name = "DownloadVideoButton";
-            this.DownloadVideoButton.Size = new System.Drawing.Size(89, 71);
+            this.DownloadVideoButton.Size = new System.Drawing.Size(134, 109);
             this.DownloadVideoButton.TabIndex = 11;
             this.DownloadVideoButton.Text = "Скачивание видео";
-            this.DownloadVideoButton.UseVisualStyleBackColor = true;
+            this.DownloadVideoButton.UseVisualStyleBackColor = false;
             this.DownloadVideoButton.Click += new System.EventHandler(this.DownloadVideoButton_Click);
             // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 341);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(304, 44);
@@ -184,10 +208,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(304, 386);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(456, 594);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.GoogleSearchButton);
             this.Controls.Add(this.IconFinderSearchButton);
@@ -201,6 +225,8 @@
             this.Controls.Add(this.FastAppButton);
             this.Controls.Add(this.TasksManagerButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "AssistantSidorovich";

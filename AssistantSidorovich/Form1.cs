@@ -93,7 +93,7 @@ namespace AssistantSidorovich
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                
-                MessageBox.Show("Searck line is empty!", "Troubles:(", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Поисковая строка пустая!", "У меня проблема:(", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -111,7 +111,7 @@ namespace AssistantSidorovich
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                
-                MessageBox.Show("Searck line is empty!", "Troubles:(", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Поисковая строка пустая!", "У меня проблема:(", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -128,7 +128,7 @@ namespace AssistantSidorovich
         {
             if (String.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Search textBox is empty!");
+                MessageBox.Show("Поисковая строка пустая!");
             }
             else
             {
@@ -168,7 +168,6 @@ namespace AssistantSidorovich
                         youtubeDl.Options.PostProcessingOptions.ExtractAudio = true;
                         youtubeDl.Options.VideoFormatOptions.Format = NYoutubeDL.Helpers.Enums.VideoFormat.worst;
                         MessageBox.Show(path);
-                        MessageBox.Show("Wait, we are dowbloading");
                         await youtubeDl.DownloadAsync($"https://www.youtube.com/watch?v={yt.videoKey}");
                         new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, FileOptions.DeleteOnClose);
                         axWindowsMediaPlayer1.Visible = true;
@@ -180,7 +179,7 @@ namespace AssistantSidorovich
                 }
                 catch
                 {
-                    MessageBox.Show("Err");
+                    MessageBox.Show("Ошибки случаются");
                 }
             }
         }
@@ -210,7 +209,7 @@ namespace AssistantSidorovich
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Ошибки случаются: " + ex.Message);
             }
             
             
