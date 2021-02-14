@@ -102,6 +102,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Bind.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Taskk.cs" />
     <Compile Include="VideoDownload.cs">
       <SubType>Form</SubType>
@@ -145,6 +146,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SettingManagerForm.resx">
+      <DependentUpon>SettingManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskManagerForm.resx">
       <DependentUpon>TaskManagerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,7 +173,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Announcers\Sidorovich\readme.txt" />
+    <Content Include="Announcers\Sidorovich\st0.wav" />
+    <Content Include="Announcers\Sidorovich\st1.wav" />
+    <Content Include="Announcers\Sidorovich\st2.wav" />
+    <Content Include="Announcers\Sidorovich\st3.wav" />
     <Content Include="Data\HotKeys.xml" />
+    <Content Include="Data\settings.xml" />
     <Content Include="Data\tasks.xml" />
     <Content Include="DLL\Google.Apis.Auth.dll" />
     <Content Include="DLL\Google.Apis.Auth.PlatformServices.dll" />
@@ -183,19 +193,19 @@
     <Content Include="images\favico.ico" />
     <Content Include="images\rammstein_mein_herz_brennt_-_original_%28zf.fm%29.mp3" />
     <Content Include="images\Test.mp4" />
-    <Content Include="Jokes\st0.mp3" />
-    <Content Include="Jokes\st1.mp3" />
-    <Content Include="Jokes\st10.mp3" />
-    <Content Include="Jokes\st11.mp3" />
-    <Content Include="Jokes\st12.mp3" />
-    <Content Include="Jokes\st2.mp3" />
-    <Content Include="Jokes\st3.mp3" />
-    <Content Include="Jokes\st4.mp3" />
-    <Content Include="Jokes\st5.mp3" />
-    <Content Include="Jokes\st6.mp3" />
-    <Content Include="Jokes\st7.mp3" />
-    <Content Include="Jokes\st8.mp3" />
-    <Content Include="Jokes\st9.mp3" />
+    <Content Include="Jokes\st0.wav" />
+    <Content Include="Jokes\st1.wav" />
+    <Content Include="Jokes\st10.wav" />
+    <Content Include="Jokes\st11.wav" />
+    <Content Include="Jokes\st12.wav" />
+    <Content Include="Jokes\st2.wav" />
+    <Content Include="Jokes\st3.wav" />
+    <Content Include="Jokes\st4.wav" />
+    <Content Include="Jokes\st5.wav" />
+    <Content Include="Jokes\st6.wav" />
+    <Content Include="Jokes\st7.wav" />
+    <Content Include="Jokes\st8.wav" />
+    <Content Include="Jokes\st9.wav" />
     <Content Include="Videos\youtube-dl.exe" />
   </ItemGroup>
   <ItemGroup>

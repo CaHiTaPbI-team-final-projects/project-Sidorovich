@@ -28,6 +28,9 @@ namespace AssistantSidorovich
 
         private void downloadButton_Click(object sender, EventArgs e)
         {
+            Form1 fm1 = new Form1();
+            fm1.loadVoiceLines();
+            fm1.playVoiceLine(2);
             try
             {
                 if(String.IsNullOrWhiteSpace(downloadTextBox.Text) != true && downloadTextBox.Text.IndexOf("youtube.com/watch?") != -1)
