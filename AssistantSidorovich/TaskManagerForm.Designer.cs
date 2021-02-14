@@ -105,7 +105,7 @@
             this.textDesription.Name = "textDesription";
             this.textDesription.Size = new System.Drawing.Size(162, 190);
             this.textDesription.TabIndex = 19;
-            this.textDesription.Text = "Введите описание";
+            this.textDesription.Text = "Описание";
             this.textDesription.Click += new System.EventHandler(this.textDesription_Click);
             // 
             // textTitle
@@ -114,7 +114,7 @@
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(162, 26);
             this.textTitle.TabIndex = 18;
-            this.textTitle.Text = "Введите заголовок";
+            this.textTitle.Text = "Заголовок";
             this.textTitle.Click += new System.EventHandler(this.textTitle_Click);
             // 
             // groupBox2
