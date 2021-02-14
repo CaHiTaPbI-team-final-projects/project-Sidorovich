@@ -234,6 +234,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "FastAppForm";
             this.Text = "Быстрый запуск";
             this.Load += new System.EventHandler(this.FastAppForm_Load);

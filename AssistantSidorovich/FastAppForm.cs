@@ -43,12 +43,17 @@ namespace AssistantSidorovich
         {
             System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
             ofd.Filter = "All Files (*.*)|*.*";
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.FileName != null && ofd.ShowDialog() == DialogResult.OK)
             {
                 AddressBox.Text = Path.GetFileName(ofd.FileName);
                 fullName = ofd.FileName;
                 name = Path.GetFileName(ofd.FileName);
             }
+            else
+            {
+                MessageBox.Show("Не выбран путь");
+            }
+
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -129,7 +134,7 @@ namespace AssistantSidorovich
             if (BindButton2CB.Enabled == true)
             {
                 int second = (int)(Keys)BindButton2CB.SelectedItem;
-                if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex)
+                if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex && !string.IsNullOrWhiteSpace(AddressBox.Text))
                 {
 
                     Bind b = new Bind()
@@ -149,6 +154,11 @@ namespace AssistantSidorovich
                     xd.Save(path);
 
                     AutoLoadFunc();
+
+                    Form1 fm = new Form1();
+                    fm.loadVoiceLines();
+                    fm.playVoiceLine(2);
+
                 }
                 else
                 {
@@ -158,7 +168,7 @@ namespace AssistantSidorovich
             else
             {
 
-                if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex)
+                if (BindButton1CB.SelectedIndex != BindButton2CB.SelectedIndex && !string.IsNullOrWhiteSpace(AddressBox.Text))
                 {
                     Bind b = new Bind()
                     {
@@ -174,6 +184,10 @@ namespace AssistantSidorovich
                     xd.Element("root").Add(new XElement("HotKey", new XAttribute("FullName", b.FullName), new XAttribute("Name",
                     b.Name), new XAttribute("AutoLoad", b.AutoLoad), new XAttribute("first", b.FirstBind), new XAttribute("second", 0), new XAttribute("third", b.ThirdBind)));
                     xd.Save(path);
+
+                    Form1 fm = new Form1();
+                    fm.loadVoiceLines();
+                    fm.playVoiceLine(2);
 
                     AutoLoadFunc();
                 }

@@ -56,6 +56,8 @@ namespace AssistantSidorovich
 
         private void btnStopwatch_Click(object sender, EventArgs e)
         {
+            //timer1.Enabled = false;
+
             groupBoxAlarm.Visible = false;
             groupBoxTimer.Visible = false;
             groupBoxStopwatch.Visible = true;
@@ -192,7 +194,7 @@ namespace AssistantSidorovich
         }
 
 
-        //Timer xerak xerak
+
         private void btnSetTimer_Click(object sender, EventArgs e)
         {
             Ht = (int)HoursTimer.Value;
@@ -216,6 +218,38 @@ namespace AssistantSidorovich
             HoursTimer.Value = 0;
             MinutesTimer.Value = 0;
             SecondsTimer.Value = 0;
+        }
+
+        private void btnStart_Click_1(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+
+            btnStart.Enabled = false;
+            btnStop.Enabled = true;
+            btnReset.Enabled = true;
+        }
+
+        private void btnStop_Click_1(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+
+            btnStart.Enabled = true;
+            btnStop.Enabled = false;
+            btnReset.Enabled = true;
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            label4.Text = "00";
+            label3.Text = "00";
+            label2.Text = "00";
+            ms = 0;
+            ss = 0;
+            mm = 0;
+
+            btnReset.Enabled = false;
+            btnStart.Enabled = true;
+            btnStop.Enabled = false;
         }
     }
 }
