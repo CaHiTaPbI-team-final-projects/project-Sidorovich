@@ -39,11 +39,11 @@ namespace AssistantSidorovich
             {
                 try
                 {
-                    //var res = root.Elements("task").Where(t => t.Attribute("title").Value == textTitle.Text).FirstOrDefault();
+                    var res = root.Elements("task").Where(t => t.Attribute("title").Value == textTitle.Text).FirstOrDefault();
 
-                    //MessageBox.Show(res.Value);
-                    /*if (res.Value == null) //res
-                    {*/
+                   // MessageBox.Show(res.Value);
+                    if (res == null) 
+                    {
                         Taskk newTask = new Taskk()
                         {
                             Title = textTitle.Text,
@@ -56,11 +56,11 @@ namespace AssistantSidorovich
 
                         xd.Save(path);
                         loadTaskList();
-                    //}
-                    /*else
+                    }
+                    else
                     {
                         MessageBox.Show("Такое задание уже существует");
-                    }*/
+                    }
                 }
                 catch (Exception err)
                 {
@@ -79,23 +79,23 @@ namespace AssistantSidorovich
             {
                 if (listBoxTasks.SelectedIndex != -1)
                 {
-                    /*try
-                    {*/
+                    try
+                    {
                         string oldTitle = (listBoxTasks.SelectedItem as Taskk).Title;
 
-                        var res = root.Elements("task").Where(t => t.Attribute("title").Value == textTitle.Text).FirstOrDefault().Attribute("title").Value;
-
-                        MessageBox.Show(res.ToString());
+                        var res = root.Elements("task").Where(t => t.Attribute("title").Value == textTitle.Text).FirstOrDefault();
 
                         if(res == null)
                         {
                             if (!string.IsNullOrWhiteSpace(textTitle.Text))
                             {
-                                (listBoxTasks.SelectedItem as Taskk).Title = textTitle.Text;
+                                if(textTitle.Text != "Заголовок")
+                                    (listBoxTasks.SelectedItem as Taskk).Title = textTitle.Text;
                             }
                             if (!string.IsNullOrWhiteSpace(textDesription.Text))
                             {
-                                (listBoxTasks.SelectedItem as Taskk).Description = textDesription.Text;
+                                if(textDesription.Text != "Описание")
+                                    (listBoxTasks.SelectedItem as Taskk).Description = textDesription.Text;
                             }
                             if (dateTimeDeadline.Value != def)
                             {
@@ -113,12 +113,11 @@ namespace AssistantSidorovich
                         {
                             MessageBox.Show("Такое задание уже существует");
                         }
-                    //}
-                    //}
-                    /*catch (Exception err)
+                    }
+                    catch (Exception err)
                     {
                         MessageBox.Show(err.Message);
-                    }*/
+                    }
                 }
                 else
                 {
