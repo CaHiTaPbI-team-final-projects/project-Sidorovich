@@ -37,6 +37,7 @@
             // 
             // downloadTextBox
             // 
+            this.downloadTextBox.BackColor = System.Drawing.Color.LightGray;
             this.downloadTextBox.Location = new System.Drawing.Point(42, 58);
             this.downloadTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.downloadTextBox.Name = "downloadTextBox";
@@ -48,7 +49,7 @@
             // 
             // downloadButton
             // 
-            this.downloadButton.BackColor = System.Drawing.SystemColors.Control;
+            this.downloadButton.BackColor = System.Drawing.Color.LightGray;
             this.downloadButton.ForeColor = System.Drawing.Color.Red;
             this.downloadButton.Location = new System.Drawing.Point(42, 168);
             this.downloadButton.Margin = new System.Windows.Forms.Padding(6);
@@ -81,20 +82,21 @@
             // 
             // selecetPathButton
             // 
+            this.selecetPathButton.BackColor = System.Drawing.Color.LightGray;
             this.selecetPathButton.Location = new System.Drawing.Point(316, 166);
             this.selecetPathButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.selecetPathButton.Name = "selecetPathButton";
             this.selecetPathButton.Size = new System.Drawing.Size(180, 35);
             this.selecetPathButton.TabIndex = 3;
             this.selecetPathButton.Text = "Выбрать путь";
-            this.selecetPathButton.UseVisualStyleBackColor = true;
+            this.selecetPathButton.UseVisualStyleBackColor = false;
             this.selecetPathButton.Click += new System.EventHandler(this.selecetPathButton_Click);
             // 
             // VideoDownload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(519, 220);
             this.Controls.Add(this.selecetPathButton);
             this.Controls.Add(this.downloadButton);

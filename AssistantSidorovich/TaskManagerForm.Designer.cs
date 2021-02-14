@@ -45,17 +45,19 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.LightGray;
             this.btnAdd.Location = new System.Drawing.Point(9, 305);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(162, 45);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
             this.groupBox1.Controls.Add(this.btnDel);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.dateTimeDeadline);
@@ -71,28 +73,31 @@
             // 
             // btnDel
             // 
+            this.btnDel.BackColor = System.Drawing.Color.LightGray;
             this.btnDel.Location = new System.Drawing.Point(8, 417);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(162, 45);
             this.btnDel.TabIndex = 23;
             this.btnDel.Text = "Удалить";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.LightGray;
             this.btnEdit.Location = new System.Drawing.Point(8, 361);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(162, 45);
             this.btnEdit.TabIndex = 21;
             this.btnEdit.Text = "Изменить";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // dateTimeDeadline
             // 
+            this.dateTimeDeadline.CalendarMonthBackground = System.Drawing.Color.LightGray;
             this.dateTimeDeadline.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeDeadline.Location = new System.Drawing.Point(9, 253);
             this.dateTimeDeadline.Name = "dateTimeDeadline";
@@ -101,6 +106,7 @@
             // 
             // textDesription
             // 
+            this.textDesription.BackColor = System.Drawing.Color.LightGray;
             this.textDesription.Location = new System.Drawing.Point(9, 57);
             this.textDesription.Multiline = true;
             this.textDesription.Name = "textDesription";
@@ -111,6 +117,7 @@
             // 
             // textTitle
             // 
+            this.textTitle.BackColor = System.Drawing.Color.LightGray;
             this.textTitle.Location = new System.Drawing.Point(9, 22);
             this.textTitle.Name = "textTitle";
             this.textTitle.Size = new System.Drawing.Size(162, 26);
@@ -120,6 +127,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Silver;
             this.groupBox2.Controls.Add(this.listBoxTasks);
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,6 +139,7 @@
             // 
             // listBoxTasks
             // 
+            this.listBoxTasks.BackColor = System.Drawing.Color.LightGray;
             this.listBoxTasks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxTasks.FormattingEnabled = true;
             this.listBoxTasks.ItemHeight = 20;
@@ -142,6 +151,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.LightGray;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.richTextBox1.Location = new System.Drawing.Point(3, 22);
             this.richTextBox1.Name = "richTextBox1";

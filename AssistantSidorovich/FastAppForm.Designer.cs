@@ -47,6 +47,7 @@
             // 
             // BindsList
             // 
+            this.BindsList.BackColor = System.Drawing.Color.LightGray;
             this.BindsList.FormattingEnabled = true;
             this.BindsList.ItemHeight = 20;
             this.BindsList.Location = new System.Drawing.Point(436, 9);
@@ -58,39 +59,43 @@
             // 
             // AddButton
             // 
+            this.AddButton.BackColor = System.Drawing.Color.LightGray;
             this.AddButton.Location = new System.Drawing.Point(14, 340);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(132, 35);
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Добавить";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DelButton
             // 
+            this.DelButton.BackColor = System.Drawing.Color.LightGray;
             this.DelButton.Location = new System.Drawing.Point(154, 340);
             this.DelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DelButton.Name = "DelButton";
             this.DelButton.Size = new System.Drawing.Size(132, 35);
             this.DelButton.TabIndex = 2;
             this.DelButton.Text = "Удалить";
-            this.DelButton.UseVisualStyleBackColor = true;
+            this.DelButton.UseVisualStyleBackColor = false;
             this.DelButton.Click += new System.EventHandler(this.DelButton_Click);
             // 
             // SaveButton
             // 
+            this.SaveButton.BackColor = System.Drawing.Color.LightGray;
             this.SaveButton.Location = new System.Drawing.Point(296, 340);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(132, 35);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "Обновить";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // BindButton3CB
             // 
+            this.BindButton3CB.BackColor = System.Drawing.Color.LightGray;
             this.BindButton3CB.FormattingEnabled = true;
             this.BindButton3CB.Location = new System.Drawing.Point(296, 157);
             this.BindButton3CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -100,6 +105,7 @@
             // 
             // BindButton2CB
             // 
+            this.BindButton2CB.BackColor = System.Drawing.Color.LightGray;
             this.BindButton2CB.Enabled = false;
             this.BindButton2CB.FormattingEnabled = true;
             this.BindButton2CB.Location = new System.Drawing.Point(154, 157);
@@ -110,6 +116,7 @@
             // 
             // BindButton1CB
             // 
+            this.BindButton1CB.BackColor = System.Drawing.Color.LightGray;
             this.BindButton1CB.FormattingEnabled = true;
             this.BindButton1CB.Location = new System.Drawing.Point(18, 157);
             this.BindButton1CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -119,17 +126,19 @@
             // 
             // ChooseButton
             // 
+            this.ChooseButton.BackColor = System.Drawing.Color.LightGray;
             this.ChooseButton.Location = new System.Drawing.Point(98, 58);
             this.ChooseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ChooseButton.Name = "ChooseButton";
             this.ChooseButton.Size = new System.Drawing.Size(112, 35);
             this.ChooseButton.TabIndex = 8;
             this.ChooseButton.Text = "Выбрать";
-            this.ChooseButton.UseVisualStyleBackColor = true;
+            this.ChooseButton.UseVisualStyleBackColor = false;
             this.ChooseButton.Click += new System.EventHandler(this.ChooseButton_Click);
             // 
             // AddressBox
             // 
+            this.AddressBox.BackColor = System.Drawing.Color.LightGray;
             this.AddressBox.Location = new System.Drawing.Point(18, 18);
             this.AddressBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddressBox.Name = "AddressBox";
@@ -180,17 +189,19 @@
             // 
             // ClearButton
             // 
+            this.ClearButton.BackColor = System.Drawing.Color.LightGray;
             this.ClearButton.Location = new System.Drawing.Point(214, 58);
             this.ClearButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(112, 35);
             this.ClearButton.TabIndex = 14;
             this.ClearButton.Text = "Очистить";
-            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // AutoLoadCB
             // 
+            this.AutoLoadCB.BackColor = System.Drawing.Color.LightGray;
             this.AutoLoadCB.FormattingEnabled = true;
             this.AutoLoadCB.Location = new System.Drawing.Point(18, 229);
             this.AutoLoadCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -203,6 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(771, 383);
             this.Controls.Add(this.AutoLoadCB);
             this.Controls.Add(this.ClearButton);
