@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimerForm));
             this.btnTimer = new System.Windows.Forms.Button();
             this.btnAlarm = new System.Windows.Forms.Button();
             this.btnStopwatch = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.btnTimer.Name = "btnTimer";
             this.btnTimer.Size = new System.Drawing.Size(123, 42);
             this.btnTimer.TabIndex = 9;
-            this.btnTimer.Text = "Timer";
+            this.btnTimer.Text = "Таймер";
             this.btnTimer.UseVisualStyleBackColor = true;
             this.btnTimer.Click += new System.EventHandler(this.btnTimer_Click);
             // 
@@ -83,7 +84,7 @@
             this.btnAlarm.Name = "btnAlarm";
             this.btnAlarm.Size = new System.Drawing.Size(123, 42);
             this.btnAlarm.TabIndex = 10;
-            this.btnAlarm.Text = "Alram clock";
+            this.btnAlarm.Text = "Будильник";
             this.btnAlarm.UseVisualStyleBackColor = true;
             this.btnAlarm.Click += new System.EventHandler(this.btnAlarm_Click);
             // 
@@ -94,7 +95,7 @@
             this.btnStopwatch.Name = "btnStopwatch";
             this.btnStopwatch.Size = new System.Drawing.Size(123, 42);
             this.btnStopwatch.TabIndex = 11;
-            this.btnStopwatch.Text = "Stopwatch";
+            this.btnStopwatch.Text = "Секундомер";
             this.btnStopwatch.UseVisualStyleBackColor = true;
             this.btnStopwatch.Click += new System.EventHandler(this.btnStopwatch_Click);
             // 
@@ -297,7 +298,7 @@
             this.btnTurnOffTimer.Name = "btnTurnOffTimer";
             this.btnTurnOffTimer.Size = new System.Drawing.Size(124, 49);
             this.btnTurnOffTimer.TabIndex = 13;
-            this.btnTurnOffTimer.Text = "Turn off";
+            this.btnTurnOffTimer.Text = "Выключить";
             this.btnTurnOffTimer.UseVisualStyleBackColor = false;
             this.btnTurnOffTimer.Click += new System.EventHandler(this.btnTurnOffTimer_Click);
             // 
@@ -309,7 +310,7 @@
             this.btnSetTimer.Name = "btnSetTimer";
             this.btnSetTimer.Size = new System.Drawing.Size(124, 49);
             this.btnSetTimer.TabIndex = 12;
-            this.btnSetTimer.Text = "Turn on";
+            this.btnSetTimer.Text = "Включить";
             this.btnSetTimer.UseVisualStyleBackColor = false;
             this.btnSetTimer.Click += new System.EventHandler(this.btnSetTimer_Click);
             // 
@@ -355,8 +356,9 @@
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.groupBoxAlarm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TimerForm";
-            this.Text = "TimerForm";
+            this.Text = "Часы";
             ((System.ComponentModel.ISupportInitialize)(this.Hours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Seconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minutes)).EndInit();

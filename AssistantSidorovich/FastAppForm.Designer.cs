@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FastAppForm));
             this.BindsList = new System.Windows.Forms.ListBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.DelButton = new System.Windows.Forms.Button();
@@ -47,17 +48,20 @@
             // BindsList
             // 
             this.BindsList.FormattingEnabled = true;
-            this.BindsList.Location = new System.Drawing.Point(291, 6);
+            this.BindsList.ItemHeight = 20;
+            this.BindsList.Location = new System.Drawing.Point(436, 9);
+            this.BindsList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BindsList.Name = "BindsList";
             this.BindsList.ScrollAlwaysVisible = true;
-            this.BindsList.Size = new System.Drawing.Size(218, 238);
+            this.BindsList.Size = new System.Drawing.Size(325, 364);
             this.BindsList.TabIndex = 0;
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(9, 221);
+            this.AddButton.Location = new System.Drawing.Point(14, 340);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(88, 23);
+            this.AddButton.Size = new System.Drawing.Size(132, 35);
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -65,9 +69,10 @@
             // 
             // DelButton
             // 
-            this.DelButton.Location = new System.Drawing.Point(103, 221);
+            this.DelButton.Location = new System.Drawing.Point(154, 340);
+            this.DelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DelButton.Name = "DelButton";
-            this.DelButton.Size = new System.Drawing.Size(88, 23);
+            this.DelButton.Size = new System.Drawing.Size(132, 35);
             this.DelButton.TabIndex = 2;
             this.DelButton.Text = "Удалить";
             this.DelButton.UseVisualStyleBackColor = true;
@@ -75,9 +80,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(197, 221);
+            this.SaveButton.Location = new System.Drawing.Point(296, 340);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(88, 23);
+            this.SaveButton.Size = new System.Drawing.Size(132, 35);
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "Обновить";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -86,33 +92,37 @@
             // BindButton3CB
             // 
             this.BindButton3CB.FormattingEnabled = true;
-            this.BindButton3CB.Location = new System.Drawing.Point(197, 102);
+            this.BindButton3CB.Location = new System.Drawing.Point(296, 157);
+            this.BindButton3CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BindButton3CB.Name = "BindButton3CB";
-            this.BindButton3CB.Size = new System.Drawing.Size(88, 21);
+            this.BindButton3CB.Size = new System.Drawing.Size(130, 28);
             this.BindButton3CB.TabIndex = 4;
             // 
             // BindButton2CB
             // 
             this.BindButton2CB.Enabled = false;
             this.BindButton2CB.FormattingEnabled = true;
-            this.BindButton2CB.Location = new System.Drawing.Point(103, 102);
+            this.BindButton2CB.Location = new System.Drawing.Point(154, 157);
+            this.BindButton2CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BindButton2CB.Name = "BindButton2CB";
-            this.BindButton2CB.Size = new System.Drawing.Size(88, 21);
+            this.BindButton2CB.Size = new System.Drawing.Size(130, 28);
             this.BindButton2CB.TabIndex = 5;
             // 
             // BindButton1CB
             // 
             this.BindButton1CB.FormattingEnabled = true;
-            this.BindButton1CB.Location = new System.Drawing.Point(12, 102);
+            this.BindButton1CB.Location = new System.Drawing.Point(18, 157);
+            this.BindButton1CB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BindButton1CB.Name = "BindButton1CB";
-            this.BindButton1CB.Size = new System.Drawing.Size(88, 21);
+            this.BindButton1CB.Size = new System.Drawing.Size(130, 28);
             this.BindButton1CB.TabIndex = 6;
             // 
             // ChooseButton
             // 
-            this.ChooseButton.Location = new System.Drawing.Point(65, 38);
+            this.ChooseButton.Location = new System.Drawing.Point(98, 58);
+            this.ChooseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ChooseButton.Name = "ChooseButton";
-            this.ChooseButton.Size = new System.Drawing.Size(75, 23);
+            this.ChooseButton.Size = new System.Drawing.Size(112, 35);
             this.ChooseButton.TabIndex = 8;
             this.ChooseButton.Text = "Выбрать";
             this.ChooseButton.UseVisualStyleBackColor = true;
@@ -120,9 +130,10 @@
             // 
             // AddressBox
             // 
-            this.AddressBox.Location = new System.Drawing.Point(12, 12);
+            this.AddressBox.Location = new System.Drawing.Point(18, 18);
+            this.AddressBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(276, 20);
+            this.AddressBox.Size = new System.Drawing.Size(412, 26);
             this.AddressBox.TabIndex = 9;
             // 
             // TwoBindsRB
@@ -130,9 +141,10 @@
             this.TwoBindsRB.AutoSize = true;
             this.TwoBindsRB.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TwoBindsRB.Checked = true;
-            this.TwoBindsRB.Location = new System.Drawing.Point(245, 69);
+            this.TwoBindsRB.Location = new System.Drawing.Point(368, 106);
+            this.TwoBindsRB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TwoBindsRB.Name = "TwoBindsRB";
-            this.TwoBindsRB.Size = new System.Drawing.Size(17, 30);
+            this.TwoBindsRB.Size = new System.Drawing.Size(22, 44);
             this.TwoBindsRB.TabIndex = 11;
             this.TwoBindsRB.TabStop = true;
             this.TwoBindsRB.Text = "2";
@@ -144,9 +156,10 @@
             // 
             this.ThreeBindsRB.AutoSize = true;
             this.ThreeBindsRB.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ThreeBindsRB.Location = new System.Drawing.Point(268, 69);
+            this.ThreeBindsRB.Location = new System.Drawing.Point(402, 106);
+            this.ThreeBindsRB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ThreeBindsRB.Name = "ThreeBindsRB";
-            this.ThreeBindsRB.Size = new System.Drawing.Size(17, 30);
+            this.ThreeBindsRB.Size = new System.Drawing.Size(22, 44);
             this.ThreeBindsRB.TabIndex = 12;
             this.ThreeBindsRB.Text = "3";
             this.ThreeBindsRB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -158,17 +171,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Location = new System.Drawing.Point(9, 83);
+            this.label1.Location = new System.Drawing.Point(14, 128);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 16);
+            this.label1.Size = new System.Drawing.Size(303, 25);
             this.label1.TabIndex = 13;
             this.label1.Text = "Количество клавиш для бинда:";
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(143, 38);
+            this.ClearButton.Location = new System.Drawing.Point(214, 58);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearButton.Size = new System.Drawing.Size(112, 35);
             this.ClearButton.TabIndex = 14;
             this.ClearButton.Text = "Очистить";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -177,17 +192,18 @@
             // AutoLoadCB
             // 
             this.AutoLoadCB.FormattingEnabled = true;
-            this.AutoLoadCB.Location = new System.Drawing.Point(12, 149);
+            this.AutoLoadCB.Location = new System.Drawing.Point(18, 229);
+            this.AutoLoadCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AutoLoadCB.Name = "AutoLoadCB";
-            this.AutoLoadCB.Size = new System.Drawing.Size(272, 21);
+            this.AutoLoadCB.Size = new System.Drawing.Size(406, 28);
             this.AutoLoadCB.TabIndex = 18;
             this.AutoLoadCB.SelectedIndexChanged += new System.EventHandler(this.AutoLoadCB_SelectedIndexChanged);
             // 
             // FastAppForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 249);
+            this.ClientSize = new System.Drawing.Size(771, 383);
             this.Controls.Add(this.AutoLoadCB);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.label1);
@@ -202,9 +218,12 @@
             this.Controls.Add(this.DelButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.BindsList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FastAppForm";
-            this.Text = "FastAppForm";
+            this.Text = "Быстрый запуск";
             this.Load += new System.EventHandler(this.FastAppForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FastAppForm_KeyPress);
             this.ResumeLayout(false);
