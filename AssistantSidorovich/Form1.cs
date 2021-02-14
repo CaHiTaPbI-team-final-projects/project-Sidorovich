@@ -11,16 +11,27 @@ using YTapi;
 using NYoutubeDL;
 using System.IO;
 using System.Media;
+using System.Xml.Linq;
+
 namespace AssistantSidorovich
 {
     public partial class Form1 : Form
     {
         SoundPlayer sp = new SoundPlayer();
         private List<string> jokesPath = new List<string>();
+        private List<string> anouncerVoicLinePath = new List<string>();
         public string path { get; set; }
         public string address { get; set; }
 
         YTapi.Search yt = new YTapi.Search();
+
+        string SettingsPath;
+        XDocument xd;
+        XElement root;
+
+        public bool announcer;
+
+        
         public Form1()
         {
             InitializeComponent();
@@ -28,25 +39,68 @@ namespace AssistantSidorovich
             notifyIcon1.Visible = false;
             this.notifyIcon1.MouseDoubleClick += new MouseEventHandler(notifyIcon1_MouseDoubleClick);
             this.Resize += new System.EventHandler(this.Form1_Resize);
+            SettingsPath = @"..\..\Data\settings.xml";
+            xd = XDocument.Load(SettingsPath);
+            root = xd.Element("root");
+            if(root.Element("settings").Attribute("isOnAnnouncer").Value == "Checked")
+            {
+                announcer = true;
+            }
+            else
+            {
+                announcer = false;
+            }
         }
         
+
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
+            loadVoiceLines();
+            if (announcer == true)
+            {
+                playVoiceLine(1);
+            }
+
             axWindowsMediaPlayer1.Visible = false;
-            for(int i = 0; i <13; i++)
+            for(int i = 0; i <4; i++)
             {
                 jokesPath.Add($@"..\..\Jokes\st{i}.wav"); 
             }
+        }
+        public void loadVoiceLines()
+        {
+            SettingManagerForm smf = new SettingManagerForm();
+            smf.announcerName = root.Element("settings").Attribute("name").Value;
+
+            for (int i = 0; i < 4; i++)
+            {
+                anouncerVoicLinePath.Add($@"..\..\Announcers\{smf.announcerName}\st{i}.wav");
+            }
+           
+        }
+        public void playVoiceLine(int index)
+        {
+            sp.Stop();
+            string mpath = anouncerVoicLinePath[index].ToString();
+            sp.SoundLocation = mpath;
+            sp.Play();
         }
 
         private void GoogleSearchButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
+               
                 MessageBox.Show("Searck line is empty!", "Troubles:(", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                if (announcer == true)
+                {
+                    playVoiceLine(3);
+                }
                 address = $"https://google.com/search?q={textBox1.Text}";
                 System.Diagnostics.Process.Start(address);
             }
@@ -56,10 +110,15 @@ namespace AssistantSidorovich
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
+               
                 MessageBox.Show("Searck line is empty!", "Troubles:(", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
+                if (announcer == true)
+                {
+                    playVoiceLine(3);
+                }
                 address = $"https://www.iconfinder.com/search?q={textBox1.Text}&price=free";
                 System.Diagnostics.Process.Start(address);
             }
@@ -75,6 +134,10 @@ namespace AssistantSidorovich
             {
                 try
                 {
+                    if (announcer == true)
+                    {
+                        playVoiceLine(3);
+                    }
                     await Task.Run(async () => yt.Start(textBox1.Text));
                     if (String.IsNullOrWhiteSpace(yt.videoKey))
                     {
@@ -140,7 +203,7 @@ namespace AssistantSidorovich
             {
                 Random r = new Random();
                 sp.Stop();
-                int index = r.Next(0, 13);
+                int index = r.Next(0, 4);
                 string mpath = jokesPath[index].ToString();
                 sp.SoundLocation = mpath;
                 sp.Play();

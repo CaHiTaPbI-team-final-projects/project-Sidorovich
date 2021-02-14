@@ -71,6 +71,7 @@
             this.DelButton.TabIndex = 2;
             this.DelButton.Text = "Удалить";
             this.DelButton.UseVisualStyleBackColor = true;
+            this.DelButton.Click += new System.EventHandler(this.DelButton_Click);
             // 
             // SaveButton
             // 
@@ -83,7 +84,6 @@
             // 
             // BindButton3CB
             // 
-            this.BindButton3CB.Enabled = false;
             this.BindButton3CB.FormattingEnabled = true;
             this.BindButton3CB.Location = new System.Drawing.Point(197, 102);
             this.BindButton3CB.Name = "BindButton3CB";
@@ -92,6 +92,7 @@
             // 
             // BindButton2CB
             // 
+            this.BindButton2CB.Enabled = false;
             this.BindButton2CB.FormattingEnabled = true;
             this.BindButton2CB.Location = new System.Drawing.Point(103, 102);
             this.BindButton2CB.Name = "BindButton2CB";

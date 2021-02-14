@@ -53,7 +53,7 @@
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(111, 23);
             this.downloadButton.TabIndex = 1;
-            this.downloadButton.Text = "Download";
+            this.downloadButton.Text = "Скачать";
             this.downloadButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.downloadButton.UseVisualStyleBackColor = false;
             this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
@@ -82,7 +82,7 @@
             this.selecetPathButton.Name = "selecetPathButton";
             this.selecetPathButton.Size = new System.Drawing.Size(120, 23);
             this.selecetPathButton.TabIndex = 3;
-            this.selecetPathButton.Text = "SelecPath";
+            this.selecetPathButton.Text = "Выбрать путь";
             this.selecetPathButton.UseVisualStyleBackColor = true;
             this.selecetPathButton.Click += new System.EventHandler(this.selecetPathButton_Click);
             // 
