@@ -35,7 +35,7 @@ namespace AssistantSidorovich
             {
                 if(String.IsNullOrWhiteSpace(downloadTextBox.Text) != true && downloadTextBox.Text.IndexOf("youtube.com/watch?") != -1)
                 {
-                    MessageBox.Show("Wait, we are downloading");
+                    MessageBox.Show("Происходит загрузка");
                     if (isCustomPathTriggered == false)
                     {
                         youtubeDl.Options.FilesystemOptions.Output = @"..\..\Videos\%(title)s.%(ext)s";
@@ -46,16 +46,16 @@ namespace AssistantSidorovich
                     }
                     youtubeDl.DownloadAsync(downloadTextBox.Text);
                     if(isCustomPathTriggered == false)
-                        MessageBox.Show($"Downloaded succsesfully at 'Videos folder', near the programm");
+                        MessageBox.Show($"Загружено в 'Videos folder', возле программы");
                     else
-                        MessageBox.Show($"Downloaded succsesfully at {customPath}");
+                        MessageBox.Show($"Успешно выгружено в: {customPath}");
 
 
 
                 }
                 else
                 {
-                    MessageBox.Show("Err, empty or incorrect url!");
+                    MessageBox.Show("Все ошибаются, но ты - особенно часто. Проверь ссылку");
                    
                 }
                 
@@ -122,7 +122,7 @@ namespace AssistantSidorovich
             }
             else
             {
-                MessageBox.Show("Path Not selected");
+                MessageBox.Show("Путь не выбран");
             }
         }
     }
