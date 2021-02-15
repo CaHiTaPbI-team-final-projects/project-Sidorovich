@@ -82,10 +82,14 @@ namespace AssistantSidorovich
         }
         public void playVoiceLine(int index)
         {
-            sp.Stop();
-            string mpath = anouncerVoicLinePath[index].ToString();
-            sp.SoundLocation = mpath;
-            sp.Play();
+            if(announcer == true)
+            {
+                sp.Stop();
+                string mpath = anouncerVoicLinePath[index].ToString();
+                sp.SoundLocation = mpath;
+                sp.Play();
+            }
+            
         }
 
         private void GoogleSearchButton_Click(object sender, EventArgs e)
