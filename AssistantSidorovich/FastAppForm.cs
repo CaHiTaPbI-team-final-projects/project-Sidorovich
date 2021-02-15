@@ -233,12 +233,24 @@ namespace AssistantSidorovich
 
         private void Hkl_HotkeyPressed(object sender, HotkeyEventArgs e)
         {
+            
             foreach (var b in binds)
             {
-                if (e.Hotkey == new Hotkey((Keys)b.FirstBind, (Keys)b.ThirdBind))
+                if (b.SecondBind == 0)
                 {
-                    Process.Start($"{b.FullName}");
+                    if (e.Hotkey == new Hotkey((Keys)b.FirstBind, (Keys)b.ThirdBind))
+                    {
+                        Process.Start($"{b.FullName}");
+                    }
                 }
+                else
+                {
+                    if (e.Hotkey == new Hotkey((Keys)b.FirstBind | (Keys)b.SecondBind, (Keys)b.ThirdBind))
+                    {
+                        Process.Start($"{b.FullName}");
+                    }
+                }
+
             }
         }
 
