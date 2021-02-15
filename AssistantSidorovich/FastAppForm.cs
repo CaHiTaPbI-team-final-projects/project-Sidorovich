@@ -205,8 +205,17 @@ namespace AssistantSidorovich
             foreach (var b in binds)
                 BindsList.Items.Add(b.ToString());
         }
+        public void StartApp()
+        { 
+            foreach(var b in binds)
+            {
+                if (b.AutoLoad == 1)
+                    Process.Start(b.FullName);
+            }
+        }
 
-        private void LoadBindList()
+
+        public void LoadBindList()
         {
             var Binds = root.Elements("HotKey").ToList();
             Bind b;

@@ -50,6 +50,10 @@ namespace AssistantSidorovich
             {
                 announcer = false;
             }
+            FastAppForm fap = new FastAppForm();
+            fap.LoadBindList();
+            fap.StartApp();
+
         }
         
 
