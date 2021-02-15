@@ -1,6 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <task title="Task 1" description="Description 1" deadline="12.05.2021" />
-  <task title="Task 2" description="Description 2" deadline="12.06.2021" />
-  <task title="Task 3" description="Description 3" deadline="12.07.2021" />
 </root>
