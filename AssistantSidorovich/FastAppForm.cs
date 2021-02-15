@@ -36,7 +36,6 @@ namespace AssistantSidorovich
             path = @"..\..\Data\HotKeys.xml";
             xd = XDocument.Load(path);
             root = xd.Element("root");
-
             AutoLoadFunc();
         }
 
