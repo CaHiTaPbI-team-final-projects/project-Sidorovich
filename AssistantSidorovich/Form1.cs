@@ -50,6 +50,10 @@ namespace AssistantSidorovich
             {
                 announcer = false;
             }
+            FastAppForm fap = new FastAppForm();
+            fap.LoadBindList();
+            fap.StartApp();
+
         }
         
 
@@ -82,10 +86,14 @@ namespace AssistantSidorovich
         }
         public void playVoiceLine(int index)
         {
-            sp.Stop();
-            string mpath = anouncerVoicLinePath[index].ToString();
-            sp.SoundLocation = mpath;
-            sp.Play();
+            if(announcer == true)
+            {
+                sp.Stop();
+                string mpath = anouncerVoicLinePath[index].ToString();
+                sp.SoundLocation = mpath;
+                sp.Play();
+            }
+            
         }
 
         private void GoogleSearchButton_Click(object sender, EventArgs e)
@@ -243,6 +251,7 @@ namespace AssistantSidorovich
             if (WindowState == FormWindowState.Minimized)
             {
                 this.ShowInTaskbar = false;
+                notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
             }
 

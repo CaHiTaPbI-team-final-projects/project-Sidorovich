@@ -36,6 +36,7 @@ namespace AssistantSidorovich
             path = @"..\..\Data\HotKeys.xml";
             xd = XDocument.Load(path);
             root = xd.Element("root");
+            AutoLoadFunc();
         }
 
 
@@ -205,8 +206,17 @@ namespace AssistantSidorovich
             foreach (var b in binds)
                 BindsList.Items.Add(b.ToString());
         }
+        public void StartApp()
+        { 
+            foreach(var b in binds)
+            {
+                if (b.AutoLoad == 1)
+                    Process.Start(b.FullName);
+            }
+        }
 
-        private void LoadBindList()
+
+        public void LoadBindList()
         {
             var Binds = root.Elements("HotKey").ToList();
             Bind b;
@@ -233,12 +243,24 @@ namespace AssistantSidorovich
 
         private void Hkl_HotkeyPressed(object sender, HotkeyEventArgs e)
         {
+            
             foreach (var b in binds)
             {
-                if (e.Hotkey == new Hotkey((Keys)b.FirstBind, (Keys)b.ThirdBind))
+                if (b.SecondBind == 0)
                 {
-                    Process.Start($"{b.FullName}");
+                    if (e.Hotkey == new Hotkey((Keys)b.FirstBind, (Keys)b.ThirdBind))
+                    {
+                        Process.Start($"{b.FullName}");
+                    }
                 }
+                else
+                {
+                    if (e.Hotkey == new Hotkey((Keys)b.FirstBind | (Keys)b.SecondBind, (Keys)b.ThirdBind))
+                    {
+                        Process.Start($"{b.FullName}");
+                    }
+                }
+
             }
         }
 
