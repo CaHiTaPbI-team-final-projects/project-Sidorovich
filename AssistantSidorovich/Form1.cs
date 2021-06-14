@@ -251,6 +251,7 @@ namespace AssistantSidorovich
             if (WindowState == FormWindowState.Minimized)
             {
                 this.ShowInTaskbar = false;
+                notifyIcon1.Icon = this.Icon;
                 notifyIcon1.Visible = true;
             }
 
